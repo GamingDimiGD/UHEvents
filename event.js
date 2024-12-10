@@ -1,6 +1,7 @@
 const eventDatesYearly = [
     {
         date: dateRange(7, 1, 7, 31),
+        dateInText: '7/1 - 7/31',
         name: '迪米生日月!',
         description: '現在有2倍閃5倍經驗!',
         id: 'birthday',
@@ -29,6 +30,7 @@ const eventDatesYearly = [
     },
     {
         date: dateRange(2, 1, 2, 31),
+        dateInText: '2/1 - 2/31',
         name: '遊戲周年慶!',
         description: '現在有2倍閃5倍經驗! (2024/2/6 創建的遊戲)',
         id: 'gameBirthday',
@@ -44,6 +46,7 @@ const eventDatesYearly = [
     },
     {
         date: dateRange(12, 1, 12, 31) || dateRange(1, 1, 1, 15),
+        dateInText: '12/1 - 1/15',
         name: '冬天活動!',
         description: '雙倍經驗和閃! 周末會疊加',
         id: 'winter',
@@ -58,6 +61,7 @@ const eventDatesYearly = [
     },
     {
         date: dateRange(7, 1, 8, 31),
+        dateInText: '7/1 - 8/31',
         name: '暑假!',
         description: '住你們放假快樂啊! 雙倍經驗和閃!',
         id: 'Summer',
@@ -71,6 +75,7 @@ const eventDatesYearly = [
     },
     {
         date: date(3, 14),
+        dateInText: '3/14',
         name: 'π!',
         description: '圓周率日! 雙倍經驗!',
         id: 'pi',
@@ -81,6 +86,7 @@ const eventDatesYearly = [
     },
     {
         date: new Date().getDay() === 6 || new Date().getDay() === 0,
+        dateInText: '週六、日',
         name: '雙倍經驗周末!',
         description: '經驗值雙倍! 可與其他活動疊加!',
         id: 'Weekend',
@@ -101,6 +107,7 @@ $.each(eventDatesYearly, (i, event) => {
                     <div class="ei">
                         <h2>${event.name}</h2>
                         <p>${event.description}</p>
+                        <p>日期: ${event.dateInText}</p>
                     </div>
                     <div class="eg"></div>
                     <img src="${event.thumbnail || '../themes/thumbnail/thumbnail-placeholder.png'}">
