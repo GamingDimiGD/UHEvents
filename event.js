@@ -52,7 +52,7 @@ const eventDatesYearly = [
         id: 'winter',
         color: 'aqua',
         fontColor: '#000',
-        thumbnail: '../themes/thumbnail/snowy.png',
+        thumbnail: url + '/themes/thumbnail/snowy.png',
         event: () => {
             snow()
             xpMultiplier *= 2;
@@ -96,6 +96,22 @@ const eventDatesYearly = [
             showNotif('是雙倍經驗周末!')
         }
     },
+    {
+        date: lunarDateRange(12, 29, 12, 31) || lunarDateRange(1, 1, 1, 15),
+        dateInText: '農曆12/29~1/15',
+        name: '農曆新年!',
+        description: '春節來了~~~ 雙倍經驗和閃!',
+        id: 'LunarNewYear',
+        thumbnail: url + 'themes/thumbnail/lunarny.png',
+        color: 'linear-gradient(90deg, #d00 10px, #3c0000 60%, #00000000)',
+        fontColor: '#ffaf00',
+        customGradient: true,
+        event: () => {
+            xpMultiplier *= 2;
+            sparkleMultiplier *= 2;
+            newYearsConfetti()
+        }
+    }
 ]
 
 $.each(eventDatesYearly, (i, event) => {
